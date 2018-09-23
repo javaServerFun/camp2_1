@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "Calculator", urlPatterns = "/calc")
+@WebServlet(name = "Calculator", urlPatterns = "/pl/survival/camp2/calc")
 public class Calculator extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
