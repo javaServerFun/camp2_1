@@ -28,6 +28,10 @@ public class CalculatorBean {
         return this.input;
     }
 
+    public void setOperation(String op) {
+        this.add();
+    }
+
     public String getAccumulator() {
         return this.accumulator.toPlainString();
     }
