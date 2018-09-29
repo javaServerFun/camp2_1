@@ -19,7 +19,18 @@
         <jsp:useBean id="calculator" class="pl.survival.camp2.calc.CalculatorBean"/>
         <c:set target="${calculator}" property="input" value="${param.input}"/>
         <c:set target="${calculator}" property="accumulator" value="${param.accumulator}"/>
-        <c:set target="${calculator}" property="operation" value="${param.operation}"/>
+        <c:choose>
+            <c:when test="${param.operation == 'm+'}">
+                <c:set var="mem" value="${calculator.accumulator}" scope="session"/>
+            </c:when>
+            <c:when test="${param.operation == 'mr'}">
+                <c:set target="${calculator}" property="accumulator" value="${mem}"/>
+            </c:when>
+            <c:otherwise>
+                <c:set target="${calculator}" property="operation" value="${param.operation}"/>
+            </c:otherwise>
+        </c:choose>
+
 
         Rezultat:<output><c:out value="${calculator.accumulator}"/></output>
         <br/>
@@ -30,9 +41,11 @@
             <input type="submit" value="+" name="operation"/>
             <input type="submit" value="-" name="operation"/>
             <input type="submit" value="*" name="operation"/>
-            <input type="submit" value="/" name="operation"/>d
+            <input type="submit" value="/" name="operation"/>
+            <br/>
+            <input type="submit" value="m+" name="operation"/>
+            <input type="submit" value="mr" name="operation"/>
         </form>
     </form>
 </body>
 </html>
-d
