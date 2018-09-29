@@ -40,8 +40,37 @@ public class CalculatorBeanTest {
         final CalculatorBean testee = new CalculatorBean();
         testee.setInput("31");
         testee.setAccumulator("11");
-        testee.add();
+        testee.setOperation("+");
         assertEquals("42", testee.getAccumulator());
     }
+
+    @Test
+    public void subTest() {
+        final CalculatorBean testee = new CalculatorBean();
+        testee.setAccumulator("31");
+        testee.setInput("11");
+        testee.setOperation("-");
+        assertEquals("20", testee.getAccumulator());
+    }
+
+    @Test
+    public void mulTest() {
+        final CalculatorBean testee = new CalculatorBean();
+        testee.setAccumulator("3");
+        testee.setInput("11");
+        testee.setOperation("*");
+        assertEquals("33", testee.getAccumulator());
+    }
+
+    @Test
+    public void divTest() {
+        final CalculatorBean testee = new CalculatorBean();
+        testee.setAccumulator("27");
+        testee.setInput("9");
+        testee.setOperation("/");
+        assertEquals("3", testee.getAccumulator());
+    }
+
+
 
 }

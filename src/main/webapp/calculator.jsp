@@ -28,7 +28,11 @@
             <input type="number" name="input"/>
             <input type="hidden" name="accumulator" value="<c:out value='${calculator.accumulator}'/>"/>
             <input type="submit" value="+" name="operation"/>
+            <input type="submit" value="-" name="operation"/>
+            <input type="submit" value="*" name="operation"/>
+            <input type="submit" value="/" name="operation"/>d
         </form>
     </form>
 </body>
 </html>
+d
